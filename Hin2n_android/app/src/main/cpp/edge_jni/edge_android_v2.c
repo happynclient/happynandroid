@@ -439,14 +439,16 @@ int start_edge_v2(n2n_edge_status_t *status) {
         if (cmd->encryption_mode[0]) {
             if (!strcmp(cmd->encryption_mode, "Twofish"))
                 conf.transop_id = N2N_TRANSFORM_ID_TWOFISH;
-            else if (!strcmp(cmd->encryption_mode, "AES-CBC"))
+            else if (!strcmp(cmd->encryption_mode, "net_happyn_happynet-CBC"))
                 conf.transop_id = N2N_TRANSFORM_ID_AESCBC;
             else if (!strcmp(cmd->encryption_mode, "Speck-CTR"))
                 conf.transop_id = N2N_TRANSFORM_ID_SPECK;
             else if (!strcmp(cmd->encryption_mode, "ChaCha20"))
                 conf.transop_id = N2N_TRANSFORM_ID_CHACHA20;
-            else
-                traceEvent(TRACE_WARNING, "unknown encryption mode:'%s'\n", cmd->encryption_mode);
+            else {
+                traceEvent(TRACE_WARNING, "unknown encryption mode:'%s， default set NULL'\n", cmd->encryption_mode);
+                conf.transop_id = N2N_TRANSFORM_ID_NULL;
+            }
         }
     } else
         conf.transop_id = N2N_TRANSFORM_ID_NULL;
@@ -674,7 +676,7 @@ int start_edge_v3(n2n_edge_status_t *status) {
         if (cmd->encryption_mode[0]) {
             if (!strcmp(cmd->encryption_mode, "Twofish"))
                 conf.transop_id = N2N_TRANSFORM_ID_TWOFISH;
-            else if (!strcmp(cmd->encryption_mode, "AES-CBC"))
+            else if (!strcmp(cmd->encryption_mode, "net_happyn_happynet-CBC"))
                 conf.transop_id = N2N_TRANSFORM_ID_AES;
             else if (!strcmp(cmd->encryption_mode, "Speck-CTR"))
                 conf.transop_id = N2N_TRANSFORM_ID_SPECK;
