@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="wang.switchy.hin2n">
+    package="net.happyn.happynet">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".Hin2nApplication"
+        android:name="net.happyn.happynet.Hin2nApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,7 +24,7 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:icon">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="net.happyn.happynet.activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,18 +34,18 @@
         </activity>
 
         <activity
-            android:name=".activity.ListActivity"
+            android:name="net.happyn.happynet.activity.ListActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.SettingDetailsActivity"
+            android:name="net.happyn.happynet.activity.SettingDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.WebViewActivity"
+            android:name="net.happyn.happynet.activity.WebViewActivity"
             android:screenOrientation="portrait" />
 
         <service
-            android:name=".service.N2NService"
+            android:name="net.happyn.happynet.service.N2NService"
             android:permission="android.permission.BIND_VPN_SERVICE">
             <intent-filter>
                 <action android:name="android.net.VpnService" />
@@ -91,7 +91,7 @@
 
         <!--wx-->
         <activity
-            android:name=".wxapi.WXEntryActivity"
+            android:name="net.happyn.happynet.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
