@@ -45,7 +45,7 @@ public class ShareUtils {
 
 
     public static void doOnClickShareItem(final Activity activity) {
-        UMWeb umWeb = new UMWeb("https://github.com/switch-iot/hin2n/blob/master/README.md");
+        UMWeb umWeb = new UMWeb("https://happyn.net");
         umWeb.setTitle("happynet");
         umWeb.setThumb(new UMImage(activity, R.mipmap.ic_launcher));
         umWeb.setDescription("N2N is a VPN project that supports p2p.");
@@ -82,7 +82,7 @@ public class ShareUtils {
                     @Override
                     public void onError(SHARE_MEDIA platform, Throwable t) {
 //                        Toast.makeText(MainActivity.this, "失败" + t.getMessage(), Toast.LENGTH_LONG).show();
-                        Log.e("zhangbzshare", "onError : " + t.getMessage());
+                        Log.e("happynshare", "onError : " + t.getMessage());
 
                         Intent intent = new Intent(activity, WebViewActivity.class);
                         intent.putExtra(WebViewActivity.WEB_VIEW_TYPE, WebViewActivity.TYPE_WEB_VIEW_SHARE);
@@ -97,7 +97,7 @@ public class ShareUtils {
                     @Override
                     public void onCancel(SHARE_MEDIA platform) {
 //                        Toast.makeText(MainActivity.this, "取消了", Toast.LENGTH_LONG).show();
-                        Log.e("zhangbzshare", "onCancel");
+                        Log.e("happynshare", "onCancel");
                     }
                 }).open();
     }
