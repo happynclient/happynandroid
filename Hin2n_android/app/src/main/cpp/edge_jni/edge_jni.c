@@ -20,7 +20,7 @@ static void ResetEdgeStatus(JNIEnv *env, uint8_t cleanup);
 
 static void InitEdgeStatus(void);
 
-JNIEXPORT jboolean JNICALL Java_wang_switchy_hin2n_service_N2NService_startEdge(
+JNIEXPORT jboolean JNICALL Java_net_happyn_happynet_service_N2NService_startEdge(
         JNIEnv *env,
         jobject this,
         jobject jcmd) {
@@ -101,7 +101,7 @@ JNIEXPORT jboolean JNICALL Java_wang_switchy_hin2n_service_N2NService_startEdge(
     return JNI_TRUE;
 }
 
-JNIEXPORT void JNICALL Java_wang_switchy_hin2n_service_N2NService_stopEdge(
+JNIEXPORT void JNICALL Java_net_happyn_happynet_service_N2NService_stopEdge(
         JNIEnv *env,
         jobject this) {
 
@@ -111,7 +111,7 @@ JNIEXPORT void JNICALL Java_wang_switchy_hin2n_service_N2NService_stopEdge(
     ResetEdgeStatus(env, 0 /* not cleanup*/);
 }
 
-JNIEXPORT jobject JNICALL Java_wang_switchy_hin2n_service_N2NService_getEdgeStatus(
+JNIEXPORT jobject JNICALL Java_net_happyn_happynet_service_N2NService_getEdgeStatus(
         JNIEnv *env,
         jobject this) {
     const char *running_status = "DISCONNECT";
