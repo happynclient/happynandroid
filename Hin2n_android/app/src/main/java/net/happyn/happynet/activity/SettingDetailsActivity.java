@@ -42,10 +42,6 @@ import net.happyn.happynet.template.BaseTemplate;
 import net.happyn.happynet.template.CommonTitleTemplate;
 
 
-/**
- * Created by janiszhang on 2018/5/4.
- */
-
 public class SettingDetailsActivity extends BaseActivity implements View.OnClickListener {
 
     private static final int REQUECT_CODE_VPN = 2;

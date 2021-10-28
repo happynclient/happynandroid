@@ -46,7 +46,7 @@ public class ShareUtils {
 
     public static void doOnClickShareItem(final Activity activity) {
         UMWeb umWeb = new UMWeb("https://github.com/switch-iot/hin2n/blob/master/README.md");
-        umWeb.setTitle("Hin2n");
+        umWeb.setTitle("happynet");
         umWeb.setThumb(new UMImage(activity, R.mipmap.ic_launcher));
         umWeb.setDescription("N2N is a VPN project that supports p2p.");
 

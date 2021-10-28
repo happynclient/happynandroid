@@ -823,7 +823,7 @@ int start_edge_v3(n2n_edge_status_t *status) {
     callbacks.sock_opened = on_edge_sock_opened;
     edge_set_callbacks(eee, &callbacks);
 
-    /* Hin2n : mostly transplant from origin n2n edge init sequence */
+    /* Happynet : mostly transplant from origin n2n edge init sequence */
     uint8_t runlevel = 0;         /* bootstrap: runlevel */
     time_t now, last_action = 0;  /*            timeout */
     uint8_t seek_answer = 1;      /*            expecting answer from supernode */

@@ -1,5 +1,6 @@
 //
 // Created by switchwang(https://github.com/switch-st) on 2018-04-15.
+// Modified by happyn.cn (https://github.com/happynclient) on 2021-10-25
 //
 
 #include <android/log.h>
