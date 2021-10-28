@@ -74,7 +74,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "wang.switchy.hin2n"
+        applicationId "net.happyn.happynet"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode getVersionCode()
@@ -196,7 +196,7 @@ android {
 
 greendao {
     schemaVersion 4
-    daoPackage 'wang.switchy.hin2n.storage.db.base'
+    daoPackage 'net.happyn.happynet.storage.db.base'
     targetGenDir 'src/main/java'
 }
 
