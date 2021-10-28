@@ -55,13 +55,13 @@ JNIEXPORT jboolean JNICALL Java_wang_switchy_hin2n_service_N2NService_startEdge(
         return JNI_FALSE;
     }
     status.jobj_service = (*env)->NewGlobalRef(env, this);
-    jclass cls = (*env)->FindClass(env, "wang/switchy/hin2n/model/EdgeStatus");
+    jclass cls = (*env)->FindClass(env, "net/happyn/happynet/model/EdgeStatus");
     if (!cls) {
         ResetEdgeStatus(env, 1 /* cleanup*/);
         return JNI_FALSE;
     }
     status.jcls_status = (*env)->NewGlobalRef(env, cls);
-    jclass cls_rs = (*env)->FindClass(env, "wang/switchy/hin2n/model/EdgeStatus$RunningStatus");
+    jclass cls_rs = (*env)->FindClass(env, "net/happyn/happynet/model/EdgeStatus$RunningStatus");
     if (!cls_rs) {
         ResetEdgeStatus(env, 1 /* cleanup*/);
         return JNI_FALSE;
@@ -140,18 +140,18 @@ JNIEXPORT jobject JNICALL Java_wang_switchy_hin2n_service_N2NService_getEdgeStat
         }
     }
 
-    jclass cls = (*env)->FindClass(env, "wang/switchy/hin2n/model/EdgeStatus");
+    jclass cls = (*env)->FindClass(env, "net/happyn/happynet/model/EdgeStatus");
     jobject jStatus = (*env)->NewObject(env, cls, (*env)->GetMethodID(env, cls, "<init>", "()V"));
     if (!jStatus) {
         return NULL;
     }
-    jclass cls_rs = (*env)->FindClass(env, "wang/switchy/hin2n/model/EdgeStatus$RunningStatus");
+    jclass cls_rs = (*env)->FindClass(env, "net/happyn/happynet/model/EdgeStatus$RunningStatus");
     jobject jRunningStatus = (*env)->GetStaticObjectField(env, cls_rs,
                                                           (*env)->GetStaticFieldID(env, cls_rs,
                                                                                    running_status,
-                                                                                   "Lwang/switchy/hin2n/model/EdgeStatus$RunningStatus;"));
+                                                                                   "Lnet/happyn/happynet/model/EdgeStatus$RunningStatus;"));
     (*env)->SetObjectField(env, jStatus, (*env)->GetFieldID(env, cls, "runningStatus",
-                                                            "Lwang/switchy/hin2n/model/EdgeStatus$RunningStatus;"),
+                                                            "Lnet/happyn/happynet/model/EdgeStatus$RunningStatus;"),
                            jRunningStatus);
 
     return jStatus;
@@ -657,7 +657,7 @@ void report_edge_status(void) {
     }
 
     jfieldID fid = (*env)->GetStaticFieldID(env, status.jcls_rs, running_status,
-                                            "Lwang/switchy/hin2n/model/EdgeStatus$RunningStatus;");
+                                            "Lnet/happyn/happynet/model/EdgeStatus$RunningStatus;");
     if (!fid) {
         (*env)->DeleteLocalRef(env, jStatus);
         return;
@@ -669,7 +669,7 @@ void report_edge_status(void) {
         return;
     }
     fid = (*env)->GetFieldID(env, status.jcls_status, "runningStatus",
-                             "Lwang/switchy/hin2n/model/EdgeStatus$RunningStatus;");
+                             "Lnet/happyn/happynet/model/EdgeStatus$RunningStatus;");
     if (!fid) {
         (*env)->DeleteLocalRef(env, jRunningStatus);
         (*env)->DeleteLocalRef(env, jStatus);
@@ -685,7 +685,7 @@ void report_edge_status(void) {
         return;
     }
     mid = (*env)->GetMethodID(env, cls, "reportEdgeStatus",
-                              "(Lwang/switchy/hin2n/model/EdgeStatus;)V");
+                              "(Lnet/happyn/happynet/model/EdgeStatus;)V");
     if (!mid) {
         (*env)->DeleteLocalRef(env, jRunningStatus);
         (*env)->DeleteLocalRef(env, jStatus);
