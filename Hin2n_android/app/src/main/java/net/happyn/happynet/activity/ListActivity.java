@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import net.happyn.happynet.Hin2nApplication;
+import net.happyn.happynet.HappynetApplication;
 import net.happyn.happynet.R;
 import net.happyn.happynet.adapter.SettingItemAdapter;
 import net.happyn.happynet.entity.SettingItemEntity;
@@ -145,10 +145,10 @@ public class ListActivity extends BaseActivity {
                                         ThreadUtils.cachedThreadExecutor(new Runnable() {
                                             @Override
                                             public void run() {
-                                                N2NSettingModel currentSettingItem = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
+                                                N2NSettingModel currentSettingItem = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
                                                 if (currentSettingItem != null) {
                                                     currentSettingItem.setIsSelcected(false);
-                                                    Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().update(currentSettingItem);
+                                                    HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().update(currentSettingItem);
                                                 }
                                             }
                                         });
@@ -160,7 +160,7 @@ public class ListActivity extends BaseActivity {
                                     ThreadUtils.cachedThreadExecutor(new Runnable() {
                                         @Override
                                         public void run() {
-                                            N2NSettingModelDao n2NSettingModelDao = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                                            N2NSettingModelDao n2NSettingModelDao = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                                             mN2NSettingModel = n2NSettingModelDao.load(mSettingItemEntities.get(position).getSaveId());
                                             mN2NSettingModel.setIsSelcected(true);
                                             n2NSettingModelDao.update(mN2NSettingModel);
@@ -184,10 +184,10 @@ public class ListActivity extends BaseActivity {
                         ThreadUtils.cachedThreadExecutor(new Runnable() {
                             @Override
                             public void run() {
-                                N2NSettingModel currentSettingItem = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
+                                N2NSettingModel currentSettingItem = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
                                 if (currentSettingItem != null) {
                                     currentSettingItem.setIsSelcected(false);
-                                    Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().update(currentSettingItem);
+                                    HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().update(currentSettingItem);
                                 }
                             }
                         });
@@ -199,7 +199,7 @@ public class ListActivity extends BaseActivity {
                     ThreadUtils.cachedThreadExecutor(new Runnable() {
                         @Override
                         public void run() {
-                            N2NSettingModelDao n2NSettingModelDao = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                            N2NSettingModelDao n2NSettingModelDao = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                             mN2NSettingModel = n2NSettingModelDao.load(mSettingItemEntities.get(position).getSaveId());
                             mN2NSettingModel.setIsSelcected(true);
 
@@ -254,7 +254,7 @@ public class ListActivity extends BaseActivity {
 
                 switch (index) {
                     case 0:
-                        N2NSettingModelDao n2NSettingModelDao1 = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                        N2NSettingModelDao n2NSettingModelDao1 = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                         N2NSettingModel n2NSettingModelCopy = n2NSettingModelDao1.load(settingItemEntity.getSaveId());
 
                         //1.db update
@@ -310,7 +310,7 @@ public class ListActivity extends BaseActivity {
                                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                     @Override
                                     public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        N2NSettingModelDao n2NSettingModelDao = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                                        N2NSettingModelDao n2NSettingModelDao = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                                         n2NSettingModelDao.deleteByKey(finalSettingItemEntity.getSaveId());
 
                                         mSettingItemEntities.remove(finalSettingItemEntity);
@@ -344,7 +344,7 @@ public class ListActivity extends BaseActivity {
         ThreadUtils.cachedThreadExecutor(new Runnable() {
             @Override
             public void run() {
-                N2NSettingModelDao n2NSettingModelDao = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                N2NSettingModelDao n2NSettingModelDao = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                 List<N2NSettingModel> n2NSettingModels = n2NSettingModelDao.loadAll();
 
                 N2NSettingModel n2NSettingModel;
@@ -389,7 +389,7 @@ public class ListActivity extends BaseActivity {
         if (requestCode == REQUECT_CODE_VPN && resultCode == RESULT_OK) {
             SettingItemEntity settingItemEntity = mSettingItemEntities.get(mTargetSettingPosition);
 
-            N2NSettingModelDao n2NSettingModelDao1 = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+            N2NSettingModelDao n2NSettingModelDao1 = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
             N2NSettingModel n2NSettingModel = n2NSettingModelDao1.load(settingItemEntity.getSaveId());
 
             Intent intent = new Intent(ListActivity.this, N2NService.class);

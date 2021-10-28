@@ -27,7 +27,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import java.util.List;
-import net.happyn.happynet.Hin2nApplication;
+import net.happyn.happynet.HappynetApplication;
 import net.happyn.happynet.R;
 import net.happyn.happynet.event.ConnectingEvent;
 import net.happyn.happynet.event.ErrorEvent;
@@ -283,7 +283,7 @@ public class MainActivity extends BaseActivity {
         showLog();
         Long currentSettingId = n2nSp.getLong("current_setting_id", -1);
         if (currentSettingId != -1) {
-            mCurrentSettingInfo = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
+            mCurrentSettingInfo = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().load((long) currentSettingId);
             if (mCurrentSettingInfo != null) {
                 mCurrentSettingName.setText(mCurrentSettingInfo.getName());
             } else {

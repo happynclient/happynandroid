@@ -27,7 +27,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import net.happyn.happynet.Hin2nApplication;
+import net.happyn.happynet.HappynetApplication;
 import net.happyn.happynet.R;
 import net.happyn.happynet.event.ErrorEvent;
 import net.happyn.happynet.event.StartEvent;
@@ -284,7 +284,7 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
             // 从数据库读取存储
             ((CommonTitleTemplate) mTemplate).setTitleText(R.string.title_update_setting);
             mSaveId = intent.getLongExtra("saveId", 0);
-            mN2NSettingModel = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao().load(mSaveId);
+            mN2NSettingModel = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao().load(mSaveId);
             mSettingName.getEditText().setText(mN2NSettingModel.getName());
             switch (mN2NSettingModel.getVersion()) {
                 case 0:
@@ -459,7 +459,7 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
                     return;
                 }
 
-                N2NSettingModelDao n2NSettingModelDao = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                N2NSettingModelDao n2NSettingModelDao = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                 String settingName = mSettingName.getEditText().getText().toString();
                 String setingNameTmp = settingName;//原始字符串
                 int i = 0;
@@ -510,7 +510,7 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
                     return;
                 }
 
-                N2NSettingModelDao n2NSettingModelDao1 = Hin2nApplication.getInstance().getDaoSession().getN2NSettingModelDao();
+                N2NSettingModelDao n2NSettingModelDao1 = HappynetApplication.getInstance().getDaoSession().getN2NSettingModelDao();
                 String settingName1 = mSettingName.getEditText().getText().toString();
                 String setingNameTmp1 = settingName1;//原始字符串
                 int i1 = 0;

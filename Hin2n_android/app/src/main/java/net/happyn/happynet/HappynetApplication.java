@@ -24,7 +24,7 @@ import com.umeng.socialize.PlatformConfig;
  * Created by janiszhang on 2018/4/19.
  */
 
-public class Hin2nApplication extends MultiDexApplication {
+public class HappynetApplication extends MultiDexApplication {
 
     public Context AppContext;
 
@@ -46,7 +46,7 @@ public class Hin2nApplication extends MultiDexApplication {
     }
 
     //静态单例
-    public static Hin2nApplication instance;
+    public static HappynetApplication instance;
 
     @Override
     public void onCreate() {
@@ -73,7 +73,7 @@ public class Hin2nApplication extends MultiDexApplication {
         PlatformConfig.setWeixin(N2nTools.getMetaData(this, N2nTools.MetaShareWxAppId), N2nTools.getMetaData(this, N2nTools.MetaShareWxAppSecret));
     }
 
-    public static Hin2nApplication getInstance() {
+    public static HappynetApplication getInstance() {
         return instance;
     }
 

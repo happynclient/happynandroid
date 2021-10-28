@@ -19,7 +19,7 @@ def getVersionName = { ->
     try {
         def stdout = new ByteArrayOutputStream()
         exec {
-            commandLine 'git', 'describe', '--tags', '--always', '--dirty', '--match', 'hin2n_v*'
+            commandLine 'git', 'describe', '--tags', '--always', '--dirty', '--match', 'happynet_v*'
             standardOutput = stdout
         }
         return stdout.toString().trim()
@@ -98,9 +98,9 @@ android {
         debug {}
 
         release {
-            storeFile file("Hin2n.jks")
+            storeFile file("happynet.jks")
             storePassword getEnvOrConsole("HIN2N_KSTOREPWD", "Keystore password")
-            keyAlias "Hin2n"
+            keyAlias "happynet"
             keyPassword getEnvOrConsole("HIN2N_KEYPWD", "Key password")
         }
     }
