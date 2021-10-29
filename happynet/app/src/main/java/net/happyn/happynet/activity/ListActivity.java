@@ -53,8 +53,8 @@ public class ListActivity extends BaseActivity {
     private SettingItemAdapter mSettingItemAdapter;
     private ArrayList<SettingItemEntity> mSettingItemEntities;
 
-    private SharedPreferences mHin2nSp;
-    private SharedPreferences.Editor mHin2nEdit;
+    private SharedPreferences mHappynetSp;
+    private SharedPreferences.Editor mHappynetEdit;
     private N2NSettingModel mN2NSettingModel;
     private int mTargetSettingPosition;
 
@@ -90,8 +90,8 @@ public class ListActivity extends BaseActivity {
             EventBus.getDefault().register(this);
         }
 
-        mHin2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
-        mHin2nEdit = mHin2nSp.edit();
+        mHappynetSp = getSharedPreferences("happynet", MODE_PRIVATE);
+        mHappynetEdit = mHappynetSp.edit();
 
         mSettingsListView = (SwipeMenuListView) findViewById(R.id.lv_setting_item);
 
@@ -102,7 +102,7 @@ public class ListActivity extends BaseActivity {
         mSettingsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
-                final Long currentSettingId = mHin2nSp.getLong("current_setting_id", -1);
+                final Long currentSettingId = mHappynetSp.getLong("current_setting_id", -1);
 
                 SettingItemEntity settingItemEntity = mSettingItemEntities.get(position);
                 Long saveId = settingItemEntity.getSaveId();
@@ -164,8 +164,8 @@ public class ListActivity extends BaseActivity {
                                             mN2NSettingModel = n2NSettingModelDao.load(mSettingItemEntities.get(position).getSaveId());
                                             mN2NSettingModel.setIsSelcected(true);
                                             n2NSettingModelDao.update(mN2NSettingModel);
-                                            mHin2nEdit.putLong("current_setting_id", mN2NSettingModel.getId());
-                                            mHin2nEdit.commit();
+                                            mHappynetEdit.putLong("current_setting_id", mN2NSettingModel.getId());
+                                            mHappynetEdit.commit();
                                             mSettingItemEntities.get(position).setSelected(true);
                                             ThreadUtils.mainThreadExecutor(new Runnable() {
                                                 @Override
@@ -205,8 +205,8 @@ public class ListActivity extends BaseActivity {
 
                             n2NSettingModelDao.update(mN2NSettingModel);
 
-                            mHin2nEdit.putLong("current_setting_id", mN2NSettingModel.getId());
-                            mHin2nEdit.commit();
+                            mHappynetEdit.putLong("current_setting_id", mN2NSettingModel.getId());
+                            mHappynetEdit.commit();
                             mSettingItemEntities.get(position).setSelected(true);
                             ThreadUtils.mainThreadExecutor(new Runnable() {
                                 @Override
@@ -295,7 +295,7 @@ public class ListActivity extends BaseActivity {
                         break;
                     case 1:
                         final SettingItemEntity finalSettingItemEntity = settingItemEntity;
-                        final Long currentSettingId = mHin2nSp.getLong("current_setting_id", -1);
+                        final Long currentSettingId = mHappynetSp.getLong("current_setting_id", -1);
                         new SweetAlertDialog(ListActivity.this, SweetAlertDialog.WARNING_TYPE)
                                 .setTitleText(getString(R.string.dialog_delete))
                                 .setCancelText(getString(R.string.dialog_no))
@@ -368,8 +368,8 @@ public class ListActivity extends BaseActivity {
                     mSettingItemEntities.add(settingItemEntity);
 
                     if (n2NSettingModel.getIsSelcected()) {
-                        mHin2nEdit.putLong("current_setting_id", n2NSettingModel.getId());
-                        mHin2nEdit.commit();
+                        mHappynetEdit.putLong("current_setting_id", n2NSettingModel.getId());
+                        mHappynetEdit.commit();
                     }
                 }
                 ThreadUtils.mainThreadExecutor(new Runnable() {

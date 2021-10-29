@@ -278,7 +278,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences n2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
+        SharedPreferences n2nSp = getSharedPreferences("happynet", MODE_PRIVATE);
         logTxtPath = n2nSp.getString("current_log_path", "");
         showLog();
         Long currentSettingId = n2nSp.getLong("current_setting_id", -1);
@@ -309,7 +309,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences n2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
+        SharedPreferences n2nSp = getSharedPreferences("happynet", MODE_PRIVATE);
         n2nSp.edit().putString("current_log_path", logTxtPath).apply();
     }
 

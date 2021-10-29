@@ -61,8 +61,8 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
 
     private TextInputLayout mSuperNodeTIL;
     private Button mSaveBtn;
-    private SharedPreferences mHin2nSp;
-    private SharedPreferences.Editor mHin2nEdit;
+    private SharedPreferences mHappynetSp;
+    private SharedPreferences.Editor mHappynetEdit;
     private TextInputLayout mSettingName;
 
     private TextInputLayout mSuperNodeBackup;
@@ -117,8 +117,8 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
             EventBus.getDefault().register(this);
         }
 
-        mHin2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
-        mHin2nEdit = mHin2nSp.edit();
+        mHappynetSp = getSharedPreferences("happynet", MODE_PRIVATE);
+        mHappynetEdit = mHappynetSp.edit();
 
         mSettingName = (TextInputLayout) findViewById(R.id.til_setting_name);
 
@@ -487,8 +487,8 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
 
                 if (!hasSelected) {
                     mN2NSettingModel = n2NSettingModelDao.queryBuilder().where(N2NSettingModelDao.Properties.IsSelcected.eq(true)).unique();
-                    mHin2nEdit.putLong("current_setting_id", mN2NSettingModel.getId());
-                    mHin2nEdit.commit();
+                    mHappynetEdit.putLong("current_setting_id", mN2NSettingModel.getId());
+                    mHappynetEdit.commit();
                 }
 
                 new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
@@ -540,7 +540,7 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
                 if (N2NService.INSTANCE != null &&
                         N2NService.INSTANCE.getCurrentStatus() != EdgeStatus.RunningStatus.DISCONNECT &&
                         N2NService.INSTANCE.getCurrentStatus() != EdgeStatus.RunningStatus.FAILED) {
-                    Long currentSettingId = mHin2nSp.getLong("current_setting_id", -1);
+                    Long currentSettingId = mHappynetSp.getLong("current_setting_id", -1);
                     if (currentSettingId == mSaveId) {
                         new SweetAlertDialog(SettingDetailsActivity.this, SweetAlertDialog.WARNING_TYPE)
                                 .setTitleText(getString(R.string.dialog_update_request))
