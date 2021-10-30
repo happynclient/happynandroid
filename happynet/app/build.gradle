@@ -99,9 +99,9 @@ android {
 
         release {
             storeFile file("happynet.jks")
-            storePassword getEnvOrConsole("HIN2N_KSTOREPWD", "Keystore password")
+            storePassword getEnvOrConsole("HAPPYNET", "Keystore password")
             keyAlias "happynet"
-            keyPassword getEnvOrConsole("HIN2N_KEYPWD", "Key password")
+            keyPassword getEnvOrConsole("HAPPYNET_KEYPWD", "Key password")
         }
     }
 
