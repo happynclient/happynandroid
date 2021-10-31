@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="encryption_modes">
+        <item>NoEncryption</item>
         <item>Twofish</item>
         <item>AES-CBC</item>
         <item>ChaCha20</item>

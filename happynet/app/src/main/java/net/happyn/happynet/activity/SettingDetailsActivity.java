@@ -270,7 +270,7 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
             mMoreSettingCheckBox.setChecked(false);
             mGatewayIp.getEditText().setText(R.string.item_default_gateway_ip);
             mDnsServer.getEditText().setText("");
-            mEncryptionMode.setSelection(encAdapter.getPosition("Twofish"));
+            mEncryptionMode.setSelection(encAdapter.getPosition("NoEncryption"));
 
             mDevDescTIL.getEditText().setText("");
 

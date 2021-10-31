@@ -181,6 +181,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initLeftMenu() {
+        //TODO HPYCLIENT-43
         TextView appVersion = (TextView) findViewById(R.id.tv_app_version);
         appVersion.setText(N2nTools.getVersionName(this));
 
