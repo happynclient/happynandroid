@@ -43,34 +43,40 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="N2N version"/>
+                    android:text="N2N version"
+                    android:visibility="invisible" />
+
                 <RadioGroup
                     android:id="@+id/rg_version"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
 
                     <RadioButton
                         android:id="@+id/rb_v1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="v1   " />
+
                     <RadioButton
                         android:id="@+id/rb_v2s"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="v2s   "/>
+                        android:text="v2s   " />
+
                     <RadioButton
                         android:id="@+id/rb_v2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="v2    "/>
+                        android:text="v2    " />
+
                     <RadioButton
                         android:id="@+id/rb_v3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="v3"/>
+                        android:text="v3" />
                 </RadioGroup>
 
             </LinearLayout>
