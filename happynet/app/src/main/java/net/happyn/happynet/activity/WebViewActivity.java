@@ -33,10 +33,10 @@ public class WebViewActivity extends BaseActivity {
     public static final int TYPE_WEB_VIEW_SHARE = 2;
     public static final int TYPE_WEB_VIEW_CONTACT = 3;
 
-    public static final String ABOUT_URL = "https://happyn.net";
-    public static final String SHARE_URL = "https://happyn.net";
-    public static final String CONTACT_URL = "https://happyn.net";
-    public static final String FEEDBACK_URL = "https://forum.happyn.net";
+    public static final String ABOUT_URL = "https://happyn.cn";
+    public static final String SHARE_URL = "https://happyn.cn";
+    public static final String CONTACT_URL = "https://happyn.cn";
+    public static final String FEEDBACK_URL = "https://forum.happyn.cn";
 
     private WebView mWebView;
     private AVLoadingIndicatorView mLoadingView;

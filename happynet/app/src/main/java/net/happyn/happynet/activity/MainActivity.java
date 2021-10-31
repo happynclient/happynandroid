@@ -181,7 +181,6 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initLeftMenu() {
-        //TODO HPYCLIENT-43
         TextView appVersion = (TextView) findViewById(R.id.tv_app_version);
         appVersion.setText(N2nTools.getVersionName(this));
 
@@ -222,6 +221,7 @@ public class MainActivity extends BaseActivity {
                 ShareUtils.joinQQGroup(MainActivity.this);
             }
         });
+        contactItem.setVisibility(View.GONE);     // @TODO 暂时不显示
 
         RelativeLayout feedbackItem = (RelativeLayout) findViewById(R.id.rl_feedback);
         feedbackItem.setOnClickListener(new View.OnClickListener() {
@@ -232,6 +232,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+        feedbackItem.setVisibility(View.GONE);     // @TODO 暂时不显示
 
         RelativeLayout checkUpdateItem = (RelativeLayout) findViewById(R.id.rl_check_update);
         checkUpdateItem.setOnClickListener(new View.OnClickListener() {
@@ -240,6 +241,7 @@ public class MainActivity extends BaseActivity {
                 Beta.checkUpgrade();
             }
         });
+        checkUpdateItem.setVisibility(View.GONE);     // @TODO 暂时不显示
 
         RelativeLayout aboutItem = (RelativeLayout) findViewById(R.id.rl_about);
         aboutItem.setOnClickListener(new View.OnClickListener() {
