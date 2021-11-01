@@ -40,12 +40,12 @@
 
             <TextView
 
-                    android:id="@+id/tv_current_setting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="Current Setting : "
-                    android:textSize="18dp"/>
+                android:id="@+id/tv_current_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="当前配置 : "
+                android:textSize="18dp" />
 
             <RelativeLayout
                     android:id="@+id/rl_current_setting_item"
@@ -54,15 +54,15 @@
                     android:layout_toRightOf="@id/tv_current_setting">
 
                 <TextView
-                        android:id="@+id/tv_current_setting_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingTop="10dp"
-                        android:text="--choose setting--"
-                        android:textSize="18dp"/>
+                    android:id="@+id/tv_current_setting_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="--选择配置--"
+                    android:textSize="18dp" />
 
 
                 <ImageView
@@ -76,24 +76,28 @@
         </RelativeLayout>
 
         <androidx.core.widget.NestedScrollView
-                android:id="@+id/scroll_log_action"
-                android:layout_below="@id/rl_current_setting"
-                android:background="@color/termail_gray"
-                android:layout_margin="10dp"
-                android:fillViewport="true"
-                android:focusableInTouchMode="true"
-                android:focusable="true"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:id="@+id/scroll_log_action"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_current_setting"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/termail_gray"
+            android:fillViewport="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
             <TextView
                 android:id="@+id/tv_log_action"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/rl_current_setting"
                 android:layout_margin="10dp"
-                android:textSize="11sp"
+                android:text="/n2n"
                 android:textColor="@color/c_white"
-                android:text="/n2n"/>
+                android:textSize="11sp" />
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
 
@@ -308,15 +312,15 @@
                         android:src="@mipmap/icon_about"/>
 
                 <TextView
-                        android:id="@+id/tv_about"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/item_icon_about"
-                        android:text="About"
-                        android:textColor="@android:color/black"
-                        android:textSize="18dp"/>
+                    android:id="@+id/tv_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/item_icon_about"
+                    android:text="关于"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>

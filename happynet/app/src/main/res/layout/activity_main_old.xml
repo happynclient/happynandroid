@@ -55,8 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Current Setting : "
-                android:textSize="18dp"/>
+                android:text="当前配置 : "
+                android:textSize="18dp" />
 
             <RelativeLayout
                 android:id="@+id/rl_current_setting_item"
@@ -93,10 +93,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/rl_current_setting"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
-            android:text="Start"
-            android:visibility="invisible"/>
+            android:layout_marginRight="30dp"
+            android:text="启动服务"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 </RelativeLayout>
