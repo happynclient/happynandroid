@@ -142,7 +142,8 @@ android {
                 output.versionNameOverride = getVersionName()
                 def channel = variant.mergedFlavor.manifestPlaceholders.UMENG_CHANNEL_VALUE
                 def arch = variant.mergedFlavor.manifestPlaceholders.ARCH
-                def fileName = "${variant.mergedFlavor.versionName}_${channel}_${arch}_${variant.buildType.name}.apk"
+                //def fileName = "${variant.mergedFlavor.versionName}_${channel}_${arch}_${variant.buildType.name}.apk"
+                def fileName = "${output.versionNameOverride}_${arch}_${variant.buildType.name}.apk"
                 outputFileName = fileName
             }
 
