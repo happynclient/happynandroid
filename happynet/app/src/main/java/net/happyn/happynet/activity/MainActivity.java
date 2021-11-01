@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.widget.NestedScrollView;
 import androidx.drawerlayout.widget.DrawerLayout;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 
 import com.orhanobut.logger.Logger;
 import com.tencent.bugly.beta.Beta;
@@ -45,6 +47,7 @@ import net.happyn.happynet.tool.IOUtils;
 import net.happyn.happynet.tool.N2nTools;
 import net.happyn.happynet.tool.ShareUtils;
 import net.happyn.happynet.tool.ThreadUtils;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -183,6 +186,17 @@ public class MainActivity extends BaseActivity {
     private void initLeftMenu() {
         TextView appVersion = (TextView) findViewById(R.id.tv_app_version);
         appVersion.setText(N2nTools.getVersionName(this));
+
+        TextView appInfo = (TextView) findViewById(R.id.tv_app_info);
+        String appInfoText = "<a href=\"https://github.com/switch-iot/hin2n\">hi2n2</a>";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            appInfo.setText(Html.fromHtml(appInfoText, Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            appInfo.setText(Html.fromHtml(appInfoText));
+        }
+
+        //appInfo.setText(Html.fromHtml(appInfoText));
+        appInfo.setMovementMethod(LinkMovementMethod.getInstance());
 
         RelativeLayout shareItem = (RelativeLayout) findViewById(R.id.rl_share);
         shareItem.setOnClickListener(new View.OnClickListener() {
