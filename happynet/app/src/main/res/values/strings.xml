@@ -1,32 +1,32 @@
 <resources>
     <string name="app_name">happynet</string>
-    <string name="open">open</string>
-    <string name="close">close</string>
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
 
     <string name="facebook_app_id"></string>
 
     <string name="no_setting"></string>
-    <string name="title_add_setting">New setting</string>
-    <string name="title_update_setting">Update setting</string>
-    <string name="title_setting_list">Settings list</string>
+    <string name="title_add_setting">新建配置</string>
+    <string name="title_update_setting">更新配置</string>
+    <string name="title_setting_list">配置列表</string>
     
-    <string name="dialog_add_succeed">Add succeed!</string>
-    <string name="dialog_save_succeed">Save succeed!</string>
-    <string name="dialog_update_succeed">Update succeed!</string>
-    <string name="dialog_update_request">Update this setting, and reconnect to n2n network?</string>
-    <string name="dialog_yes">Yes</string>
-    <string name="dialog_no">No</string>
-    <string name="dialog_reconnect">Reconnect n2n network with new setting?</string>
-    <string name="dialog_delete">Are you sure to delete this setting?</string>
+    <string name="dialog_add_succeed">添加成功!</string>
+    <string name="dialog_save_succeed">保存成功!</string>
+    <string name="dialog_update_succeed">更新成功!</string>
+    <string name="dialog_update_request">更新此配置，并用此配置重新连接服务器?</string>
+    <string name="dialog_yes">是</string>
+    <string name="dialog_no">否</string>
+    <string name="dialog_reconnect">用新配置重新连接服务器?</string>
+    <string name="dialog_delete">确认要删除此配置吗?</string>
 
-    <string name="toast_connect_failed">Failed to connect to the N2N network</string>
-    <string name="toast_disconnect_and_retry">Disconnected with supernode and try to reconnect to N2N network later</string>
+    <string name="toast_connect_failed">连接服务器失败</string>
+    <string name="toast_disconnect_and_retry">连接服务器失败，请稍等一分钟后重连</string>
 
-    <string name="notify_disconnect">Disconnected with supernode</string>
-    <string name="notify_reconnected">Reconnect to supernode successfully</string>
+    <string name="notify_disconnect">断开连接</string>
+    <string name="notify_reconnected">重新连接服务器成功</string>
 
-    <string name="notification_channel_id_default">default</string>
-    <string name="notification_channel_name_default">default</string>
+    <string name="notification_channel_id_default">默认</string>
+    <string name="notification_channel_name_default">默认</string>
 
     <string-array name="vpn_session_name">
         <item>n2n_v1</item>

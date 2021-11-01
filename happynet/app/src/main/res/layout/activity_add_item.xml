@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ll_n2n_version"
                 android:layout_marginTop="5dp"
-                android:hint="服务URL,示例:vip00.happyn.cc:5000">
+                android:hint="服务URL">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_super_node"
@@ -228,13 +228,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="加密算法"
+                    android:hint="Encryption method"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Encryption method" />
+                        android:text="加密算法" />
 
                     <Spinner
                         android:id="@+id/til_encryption_mode"
