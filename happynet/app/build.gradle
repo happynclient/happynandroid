@@ -15,7 +15,7 @@ def getVersionCode = { ->
     }
 }
 
-def get = { ->
+def getVersionName = { ->
     try {
         def stdout = new ByteArrayOutputStream()
         exec {
@@ -139,7 +139,7 @@ android {
         variant.outputs.all { output ->
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                output.versionNameOverride = ()
+                output.versionNameOverride = getVersionName()
                 def channel = variant.mergedFlavor.manifestPlaceholders.UMENG_CHANNEL_VALUE
                 def arch = variant.mergedFlavor.manifestPlaceholders.ARCH
                 def fileName = "${variant.mergedFlavor.versionName}_${channel}_${arch}_${variant.buildType.name}.apk"
