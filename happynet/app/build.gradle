@@ -15,11 +15,11 @@ def getVersionCode = { ->
     }
 }
 
-def getVersionName = { ->
+def get = { ->
     try {
         def stdout = new ByteArrayOutputStream()
         exec {
-            commandLine 'git', 'describe', '--tags', '--always', '--dirty', '--match', 'happynet_v*'
+            commandLine 'git', 'describe', '--tags', '--always'
             standardOutput = stdout
         }
         return stdout.toString().trim()
@@ -139,7 +139,7 @@ android {
         variant.outputs.all { output ->
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                output.versionNameOverride = getVersionName()
+                output.versionNameOverride = ()
                 def channel = variant.mergedFlavor.manifestPlaceholders.UMENG_CHANNEL_VALUE
                 def arch = variant.mergedFlavor.manifestPlaceholders.ARCH
                 def fileName = "${variant.mergedFlavor.versionName}_${channel}_${arch}_${variant.buildType.name}.apk"
