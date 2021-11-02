@@ -676,7 +676,7 @@ int start_edge_v3(n2n_edge_status_t *status) {
         if (cmd->encryption_mode[0]) {
             if (!strcmp(cmd->encryption_mode, "Twofish"))
                 conf.transop_id = N2N_TRANSFORM_ID_TWOFISH;
-            else if (!strcmp(cmd->encryption_mode, "net_happyn_happynet-CBC"))
+            else if (!strcmp(cmd->encryption_mode, "AES-CBC"))
                 conf.transop_id = N2N_TRANSFORM_ID_AES;
             else if (!strcmp(cmd->encryption_mode, "Speck-CTR"))
                 conf.transop_id = N2N_TRANSFORM_ID_SPECK;
