@@ -437,9 +437,7 @@ int start_edge_v2(n2n_edge_status_t *status) {
         traceEvent(TRACE_DEBUG, "encrypt_key = '%s'\n", encrypt_key);
 
         if (cmd->encryption_mode[0]) {
-            if (!strcmp(cmd->encryption_mode, "NoEncryption"))
-                conf.transop_id = N2N_TRANSFORM_ID_NULL;
-            else if (!strcmp(cmd->encryption_mode, "Twofish"))
+            if (!strcmp(cmd->encryption_mode, "Twofish"))
                 conf.transop_id = N2N_TRANSFORM_ID_TWOFISH;
             else if (!strcmp(cmd->encryption_mode, "AES-CBC"))
                 conf.transop_id = N2N_TRANSFORM_ID_AESCBC;
