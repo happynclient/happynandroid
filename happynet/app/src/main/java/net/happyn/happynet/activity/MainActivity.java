@@ -190,7 +190,7 @@ public class MainActivity extends BaseActivity {
         mCurrentSettingName.setText(R.string.no_setting);
 
         mStartAtBoot = (CheckBox) findViewById(R.id.check_box_start_at_boot);
-        SharedPreferences n2nSp = getSharedPreferences("Hin2n", Context.MODE_PRIVATE);
+        SharedPreferences n2nSp = getSharedPreferences("happynet", Context.MODE_PRIVATE);
         if(n2nSp.getBoolean("start_at_boot", false))
             mStartAtBoot.setChecked(true);
 
@@ -204,7 +204,7 @@ public class MainActivity extends BaseActivity {
                         return;
                     }
                 }
-                SharedPreferences n2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
+                SharedPreferences n2nSp = getSharedPreferences("happynet", MODE_PRIVATE);
                 n2nSp.edit().putBoolean("start_at_boot", mStartAtBoot.isChecked()).apply();
             }
         });
@@ -323,7 +323,7 @@ public class MainActivity extends BaseActivity {
             mStartAtBoot = (CheckBox) findViewById(R.id.check_box_start_at_boot);
             if (mStartAtBoot.isChecked()) {
                 if (resultCode == RESULT_OK) {
-                    SharedPreferences n2nSp = getSharedPreferences("Hin2n", MODE_PRIVATE);
+                    SharedPreferences n2nSp = getSharedPreferences("happynet", MODE_PRIVATE);
                     n2nSp.edit().putBoolean("start_at_boot", true).apply();
                 } else {
                     mStartAtBoot.setChecked(false);
