@@ -95,7 +95,12 @@ android {
     }
 
     signingConfigs {
-        debug {}
+        debug {
+            storeFile file("happynet.jks")
+            storePassword getEnvOrConsole("HAPPYNET", "Keystore password")
+            keyAlias "happynet"
+            keyPassword getEnvOrConsole("HAPPYNET_KEYPWD", "Key password")
+        }
 
         release {
             storeFile file("happynet.jks")
