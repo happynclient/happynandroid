@@ -155,8 +155,8 @@ public class N2NService extends VpnService {
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
                     .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
-                    .setContentTitle("hin2n")
-                    .setContentText("hin2n service is running")
+                    .setContentTitle("happynet")
+                    .setContentText("happynet服务正在运行")
                     .setContentIntent(pendingIntent);
             Notification notification = notificationBuilder.build();
             notification.flags |= Notification.FLAG_NO_CLEAR;

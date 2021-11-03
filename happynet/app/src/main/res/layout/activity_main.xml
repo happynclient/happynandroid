@@ -78,8 +78,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_current_setting_item"
-                android:layout_centerHorizontal="true"
-                android:text="注册为服务开机自启动" />
+                android:layout_marginTop="-1dp"
+                android:text="注册为服务开机自启动"
+                android:visibility="gone" />
 
         </RelativeLayout>
 
