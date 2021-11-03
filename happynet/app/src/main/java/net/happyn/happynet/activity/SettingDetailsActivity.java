@@ -251,9 +251,6 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
         mModifyBtn = (Button) findViewById(R.id.btn_modify);
         mModifyBtn.setOnClickListener(this);
 
-        Intent intent = getIntent();
-        type = intent.getIntExtra("type", 0);
-
         if (type == TYPE_SETTING_ADD) {
             //新增配置，需要设置默认值的设置默认值
             ((CommonTitleTemplate) mTemplate).setTitleText(R.string.title_add_setting);

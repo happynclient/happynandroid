@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.net.VpnService;
 import android.os.Bundle;
 import androidx.core.content.ContextCompat;
-import net.happyn.happynet.Hin2nApplication;
+import net.happyn.happynet.HappynetApplication;
 import net.happyn.happynet.model.N2NSettingInfo;
 import net.happyn.happynet.service.N2NService;
 import net.happyn.happynet.storage.db.base.model.N2NSettingModel;
