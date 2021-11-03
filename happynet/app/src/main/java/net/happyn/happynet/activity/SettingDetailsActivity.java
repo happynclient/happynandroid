@@ -117,6 +117,9 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
             EventBus.getDefault().register(this);
         }
 
+        Intent intent = getIntent();
+        type = intent.getIntExtra("type", 0);
+
         mHappynetSp = getSharedPreferences("happynet", MODE_PRIVATE);
         mHappynetEdit = mHappynetSp.edit();
 
@@ -126,6 +129,12 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
         mVersionGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                if (type == TYPE_SETTING_ADD) {
+                    if (checkedId == R.id.rb_v3)
+                        mEncryptionMode.setSelection(1);
+                    else
+                        mEncryptionMode.setSelection(0);
+                }
                 updateVersionGroupCheck(checkedId);
             }
         });
@@ -441,7 +450,8 @@ public class SettingDetailsActivity extends BaseActivity implements View.OnClick
         if (supernode == null || supernode.isEmpty() ||
                 supernode.equals(getString(R.string.item_default_supernode_v1)) ||
                 supernode.equals(getString(R.string.item_default_supernode_v2)) ||
-                supernode.equals(getString(R.string.item_default_supernode_v2s))) {
+                supernode.equals(getString(R.string.item_default_supernode_v2s)) ||
+                supernode.equals(getString(R.string.item_default_supernode_v3))) {
             return true;
         }
         return false;

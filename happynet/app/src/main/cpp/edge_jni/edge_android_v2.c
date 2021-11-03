@@ -446,8 +446,8 @@ int start_edge_v2(n2n_edge_status_t *status) {
             else if (!strcmp(cmd->encryption_mode, "ChaCha20"))
                 conf.transop_id = N2N_TRANSFORM_ID_CHACHA20;
             else {
-                traceEvent(TRACE_WARNING, "unknown encryption mode:'%s， default set NULL'\n", cmd->encryption_mode);
-                conf.transop_id = N2N_TRANSFORM_ID_NULL;
+                traceEvent(TRACE_WARNING, "unknown encryption mode:'%s， default set AES '\n", cmd->encryption_mode);
+                conf.transop_id = N2N_TRANSFORM_ID_AESCBC;
             }
         }
     } else

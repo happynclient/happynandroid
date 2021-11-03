@@ -1,10 +1,13 @@
 package net.happyn.happynet.service;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.VpnService;
 import android.os.*;
 
@@ -133,6 +136,33 @@ public class N2NService extends VpnService {
         } catch (Exception e) {
             EventBus.getDefault().post(new ErrorEvent());
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String CHANNEL_ONE_ID = "net.happyn.happynet";
+            String CHANNEL_ONE_NAME = "Channel One";
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ONE_ID,
+                    CHANNEL_ONE_NAME, NotificationManager.IMPORTANCE_HIGH);
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.setShowBadge(true);
+            notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            manager.createNotificationChannel(notificationChannel);
+
+            Intent i = new Intent(this, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, 0);
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,CHANNEL_ONE_ID)
+                    .setTicker("Nature")
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                    .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
+                    .setContentTitle("hin2n")
+                    .setContentText("hin2n service is running")
+                    .setContentIntent(pendingIntent);
+            Notification notification = notificationBuilder.build();
+            notification.flags |= Notification.FLAG_NO_CLEAR;
+            startForeground(1, notification);
+        }
+
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -146,6 +176,8 @@ public class N2NService extends VpnService {
             return (false);
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            stopForeground(true);
         ThreadUtils.cachedThreadExecutor(new Runnable() {
             @Override
             public void run() {

@@ -73,6 +73,14 @@
                         android:src="@mipmap/img_more"/>
             </RelativeLayout>
 
+            <CheckBox
+                android:id="@+id/check_box_start_at_boot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_current_setting_item"
+                android:layout_centerHorizontal="true"
+                android:text="注册为服务开机自启动" />
+
         </RelativeLayout>
 
         <androidx.core.widget.NestedScrollView
