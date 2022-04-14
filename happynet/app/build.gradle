@@ -234,3 +234,10 @@ dependencies {
     implementation 'com.yanzhenjie:permission:2.0.3'
     implementation 'com.github.f0ris.sweetalert:library:latest.release'
 }
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

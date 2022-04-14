@@ -7,9 +7,9 @@
     <string name="item_default_community"></string>
     <string name="item_default_password"></string>
     <string name="item_default_supernode_v1">supernodev1.happyn.cc:40001</string>
-    <string name="item_default_supernode_v2">supernodev2.happyn.cc:50001</string>
-    <string name="item_default_supernode_v2s">supernodev2s.happyn.cc:50002</string>
-    <string name="item_default_supernode_v3">rvip.happyn.cc:50001</string>
+    <string name="item_default_supernode_v2">vip00.happyn.cc:50001</string>
+    <string name="item_default_supernode_v2s">vip00.happyn.cc:50002</string>
+    <string name="item_default_supernode_v3">vip00.happyn.cc:50001</string>
     <string name="item_default_supernode_backup"></string>
     <string name="item_default_macaddr"></string>
     <string name="item_default_mtu">1386</string>

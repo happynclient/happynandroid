@@ -8,7 +8,8 @@
 [submodule "n2n_ntop_v3"]
 	path = bundles/n2n_ntop_v3
 	url = https://github.com/happynlab/n2n.git
-	branch = happyn/x64-dev
+	branch = happyn/3.0-dev
 [submodule "bundles/n2n_ntop_v3"]
 	path = bundles/n2n_ntop_v3
 	url = https://github.com/happynlab/n2n.git
+	branch = happyn/3.0-dev

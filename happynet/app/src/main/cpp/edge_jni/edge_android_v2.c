@@ -1080,7 +1080,8 @@ int start_edge_v3(n2n_edge_status_t *status) {
     g_status->report_edge_status();
     traceEvent(TRACE_NORMAL, "edge started");    
 
-    run_edge_loop(eee, &keep_on_running);
+    eee->keep_running = &keep_on_running;
+    run_edge_loop(eee);
 
     traceEvent(TRACE_NORMAL, "edge stopped");
 
