@@ -72,11 +72,10 @@ def getAllManifestValues = { variant ->
 
 android {
     compileSdkVersion 31
-    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "net.happyn.happynet"
         minSdkVersion 17
-        targetSdkVersion 31
+        targetSdkVersion 28
         versionCode getVersionCode()
         versionName getVersionName()
         multiDexEnabled true
