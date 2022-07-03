@@ -2,7 +2,7 @@ project(Happynet)
 cmake_minimum_required(VERSION 3.4.1)
 
 # N2n information
-set(N2N_VERSION 2.9.0)
+set(N2N_VERSION happyn.3.0.0)
 set(N2N_OSNAME ${CMAKE_SYSTEM})
 set(N2N_MODIFY_VERSION v2s_0.1.0)
 set(N2N_MODIFY_AUTHOR "happyn(https://happyn.net) switchwang(https://github.com/switch-st) zhangbz(https://github.com/zhangbz)")
