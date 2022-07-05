@@ -726,6 +726,9 @@ int start_edge_v3(n2n_edge_status_t *status) {
         traceEvent(TRACE_DEBUG, "random device mac: %s\n", device_mac);
     }
 
+    // default for select supernodes by rtt
+    conf.sn_selection_strategy = SN_SELECTION_STRATEGY_RTT;
+
     str2mac(hex_mac, device_mac);
 
     if(cmd->devDesc && cmd->devDesc[0]) {
