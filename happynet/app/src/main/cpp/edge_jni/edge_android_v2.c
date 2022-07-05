@@ -729,6 +729,9 @@ int start_edge_v3(n2n_edge_status_t *status) {
     // default for select supernodes by rtt
     conf.sn_selection_strategy = SN_SELECTION_STRATEGY_RTT;
 
+    // default enable lz compression
+    conf.compression = N2N_COMPRESSION_ID_LZO;
+
     str2mac(hex_mac, device_mac);
 
     if(cmd->devDesc && cmd->devDesc[0]) {
